@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation</title>
+    
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+    />
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet"/>
+    
+    <style>
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color: black;}
+
+        {% comment %} 헤더 디자인 {% endcomment %}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            text-align: center;
+            box-sizing: border-box; 
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width and height */
+        }
+
+        .wearin-title{
+            color: #ff5a5f;
+        }
+        .wearin-title:hover{
+            color: #BB2B30;
+        }
+
+        
+        .header .menu {
+            display: flex;
+            align-items: center;
+        }
+        .header .menu .menu-item {
+            margin-left: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ff5a5f;
+        }
+        .header .menu .menu-item:hover {
+            color: #BB2B30;
+        }
+
+        {% comment %} index {% endcomment %}
+        .content {
+            padding: 20px;
+            margin-top: 60px; /* Added to ensure the content is not hidden under the fixed header */
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .stats div {
+            font-size: 25px;
+            margin-top: 30px;
+        }
+        .amount {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 20px;
+            background-color: #4CAF50;
+            width: 0%; /* 초기값 */
+            border-radius: 8px;
+        }
+        .progress-text {
+            margin-top: 10px;
+        }
+
+        .button {
+            background-color: #ff5a5f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+        .button:hover{
+            background-color: #BB2B30;
+        }
+
+        .message {
+            transition: opacity 0.5s ease;
+        }
+
+        hr {
+            width : 51%;            
+          }
+
+        {% comment %} 마일리지에 따라 구매 가능한 포스트 리스트 {% endcomment %}
+        .container {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        max-width: 1600px;
+        margin: 0 auto;
+        }
+
+        .progress-text {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        #mileageForm {
+            margin-bottom: 20px;
+        }
+
+        .alert {
+            margin-bottom: 20px;
+        }
+
+        .items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4개의 열을 동일한 크기로 설정 */
+            grid-auto-rows: minmax(350px, auto); /* 모든 행의 최소 높이를 설정 */
+            gap: 60px; /* 포스트 사이의 간격 */
+            padding: 20px;
+            background-color: #f9f9f9;
+            max-width: 1200px; /* 컨테이너의 최대 너비 설정 */
+        }
+
+        .item {
+            background-color: #ffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            aspect-ratio: 1 / 1;
+            width: 80%;
+            height: 100%;
+            
+        }
+
+        .item:hover {
+            transform: translateY(-10px);
+        }
+
+        .image-container img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+
+        .info {
+            margin-top: 19px;
+        }
+
+        .info h2 {
+            font-size: 1.1em;
+            margin-top: -15px;
+        }
+
+        .info p {
+            font-size: 1em;
+            color: #666;
+            margin-top: -13px;
+        }
+    </style>
+</head>
+<body>
+    {% comment %} header {% endcomment %}
+    <div class="header">
+        <div class="logo">
+            <a href="{% url 'sharecloth:main' %}">
+                <h2 class="wearin-title"> WearIn </h2>
+            </a> 
+        </div>
+        <div class="menu">
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:donation_page' %}'">Donation</div>
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:mypage' %}'">My page</div>
+        </div>
+    </div>
+
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="message {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+  {% comment %} index {% endcomment %}
+    <div class="content">
+        <div class="stats">
+            <div>
+                지금까지 모인 기부금
+                <div class="amount">₩{{ donation|floatformat:0 }}</div>
+            </div>
+            <div>
+                내 마일리지
+                <div class="amount">₩{{ mileage|floatformat:0 }}</div>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        
+        <div class="progress-text">마일리지 전환까지 <strong>'{{ remaining_amount|floatformat:0 }}'</strong>원 남았어요</div>
+        
+        <form method="POST" action="{% url 'sharecloth:convert_donation_to_mileage' %}" id="mileageForm">
+            {% csrf_token %}
+            <button class="button" id="mileageButton">마일리지 받기</button>
+        </form>
+
+        {% comment %} 적립 여부 메시지 출력 {% endcomment %}
+        {% if messages %}
+            <div id="message-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} message">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+
+            <div class="container">
+                <!-- Post의 price와 UserProfile의 mileage를 비교 -->
+                <strong>{{ user.username }}님의 보유 마일리지로 구매 가능해요!</strong>
+                <div class="items">
+                    {% for post in available_posts %}
+                        <div class="item">
+                            <a href="{% url 'sharecloth:post_detail' post.pk %}">
+                                <div class="image-container">
+                                    <img src="{{ post.image.url }}" alt="{{ post.title }}" /> 
+                                </div>
+                                <div class="info">
+                                    <h2>{{ post.title }}</h2>
+                                    <p>{{ post.price }}원</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기부금액 누적 진행 바 (max=10000) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // UserProfile의 donation 값
+            var donationAmount = {{ user_profile.donation|default:"0" }};
+            // progress bar의 최대값
+            var maxDonation = 10000;
+            // progress bar의 너비 계산
+            var progressPercentage = (donationAmount / maxDonation) * 100;
+            // progress bar 업데이트
+            document.querySelector('.progress').style.width = progressPercentage + '%';
+        });
+    </script>
+
+    {% comment %} 메시지 1.5초후 자동 닫기 {% endcomment %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var messages = document.querySelectorAll('#message-container .message');
+                messages.forEach(function(message) {
+                    message.style.transition = 'opacity 0.5s ease';
+                    message.style.opacity = '0';
+                    setTimeout(function() {
+                        if (message.parentNode) {
+                            message.parentNode.removeChild(message);
+                        }
+                    }, 500); // Match this duration with the CSS transition duration
+                });
+            }, 1500);
+        });
+    </script>
+</body>
+<html>

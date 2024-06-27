@@ -1,0 +1,248 @@
+.footer-child1 {
+  position: absolute;
+  height: 21.37%;
+  width: 100%;
+  top: -0.02%;
+  right: 0;
+  bottom: 78.65%;
+  left: 0;
+  background-color: var(--color-white1);
+  border-top: 1px solid var(--color-gray-200);
+  box-sizing: border-box;
+}
+.p3,
+.p4 {
+  margin: 0;
+}
+.div41 {
+  position: absolute;
+  height: 19.1%;
+  width: 37.17%;
+  top: 19.1%;
+  left: 0.25%;
+  color: var(--color-darkgray-100);
+  display: inline-block;
+}
+.names-here {
+  font-size: var(--font-size-5xl);
+}
+.home11,
+.names-here {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.div42,
+.div43,
+.home11 {
+  font-weight: 500;
+}
+.div42 {
+  position: absolute;
+  top: 30.04%;
+  left: 0;
+}
+.div43 {
+  top: 60.09%;
+}
+.div43,
+.div44,
+.home-parent7 {
+  position: absolute;
+  left: 0;
+}
+.div44 {
+  top: 89.7%;
+  font-weight: 500;
+}
+.home-parent7 {
+  height: 80.9%;
+  width: 100%;
+  top: 19.1%;
+  right: 0;
+  bottom: 0;
+}
+.group-parent24,
+.links3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.links3 {
+  font-weight: 500;
+  color: var(--color-darkgray-100);
+}
+.group-parent24 {
+  height: 100%;
+  width: 17.39%;
+  right: 82.61%;
+  bottom: 0;
+}
+.div45,
+.help4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+}
+.div46 {
+  top: 42.94%;
+  font-weight: 500;
+}
+.div46,
+.div47,
+.parent2 {
+  position: absolute;
+  left: 0;
+}
+.div47 {
+  top: 85.28%;
+  font-weight: 500;
+}
+.parent2 {
+  height: 74.77%;
+  width: 100%;
+  top: 25.23%;
+  right: 0;
+  bottom: 0;
+  color: var(--color-black);
+}
+.group-parent23,
+.help-parent1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.help-parent1 {
+  height: 75.69%;
+  width: 42.39%;
+  bottom: 24.31%;
+  left: 57.61%;
+  color: var(--color-darkgray-100);
+}
+.group-parent23 {
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+.newsletter3 {
+  font-weight: 500;
+}
+.enter-your-email3,
+.group-child30,
+.newsletter3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.group-child30 {
+  height: 8.33%;
+  width: 70.63%;
+  top: 100%;
+  right: 29.37%;
+  bottom: -8.33%;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+.group-child31,
+.subscribe3 {
+  position: absolute;
+  left: 73.78%;
+}
+.subscribe3 {
+  top: 0;
+  font-weight: 500;
+  color: var(--color-black);
+}
+.group-child31 {
+  height: 8.33%;
+  width: 26.92%;
+  top: 100%;
+  right: -0.7%;
+  bottom: -8.33%;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+}
+.enter-your-email-address-parent1 {
+  position: absolute;
+  height: 23.76%;
+  width: 100%;
+  top: 76.24%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: var(--font-size-sm);
+}
+.newsletter-parent1 {
+  position: absolute;
+  height: 35.07%;
+  width: 77.72%;
+  top: 0.69%;
+  right: -92.93%;
+  bottom: 64.24%;
+  left: 115.22%;
+  display: none;
+  color: var(--color-darkgray-100);
+}
+.group-parent22 {
+  position: absolute;
+  height: 100%;
+  width: 46.52%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 53.48%;
+}
+.group-child32,
+.parent1 {
+  position: absolute;
+  height: 68.74%;
+  width: 63.79%;
+  top: 0;
+  right: 36.21%;
+  bottom: 31.26%;
+  left: 0;
+}
+.group-child32 {
+  height: 1.69%;
+  width: 100.08%;
+  right: -0.08%;
+  bottom: 98.31%;
+  border-top: 1px solid var(--color-gainsboro);
+  box-sizing: border-box;
+}
+.capston-design-team {
+  position: absolute;
+  top: 59.32%;
+  left: 0.16%;
+}
+.group-parent21,
+.line-parent1 {
+  position: absolute;
+  height: 14.08%;
+  width: 100%;
+  top: 85.92%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.group-parent21 {
+  height: 17.72%;
+  width: 86.11%;
+  top: 2.03%;
+  right: 6.94%;
+  bottom: 80.25%;
+  left: 6.94%;
+}
+.footer3 {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white1);
+  height: 2365px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}

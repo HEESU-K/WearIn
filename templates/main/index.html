@@ -1,0 +1,16 @@
+{% extends 'main/page.html' %}
+
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+
+        Your username is <b>{{ request.user.username }}</b>.
+
+    {% else %}
+
+        You are a guest.
+
+    {% endif %}
+
+{% endblock %}

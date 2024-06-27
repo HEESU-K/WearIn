@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header .logo img {
+            height: 40px;
+        }
+        
+        .header .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+            max-width: 600px;
+            flex: 1;
+            margin: 0 20px;
+        }
+        
+        .header .search-bar input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 5px;
+        }
+        
+        .header .search-bar .icon {
+            margin-left: 10px;
+        }
+        
+        .header .menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header .menu .menu-item {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        
+        .header .menu .menu-item img {
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Airbnb_Logo_Bélo.svg/512px-Airbnb_Logo_Bélo.svg.png" alt="CLOTHSHARE">
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="원하는 옷을 찾아보세요">
+        <div class="icon">
+            <img src="https://img.icons8.com/material-outlined/24/000000/search.png" alt="Search Icon">
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menu-item">Donation</div>
+        <div class="menu-item">My page</div>
+        <div class="menu-item">
+            <img src="https://img.icons8.com/material-outlined/24/000000/menu.png" alt="Menu Icon">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

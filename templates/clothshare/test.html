@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ posts.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, h1, h2, p, img, div, section, header, footer {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            color: #333;
+            padding: 20px;
+        }
+        
+        {% comment %}  {% endcomment %}
+        /* 헤더 스타일 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        header .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        
+        header .menu {
+            display: flex;
+            gap: 20px;
+        }
+        
+        header .menu-item {
+            cursor: pointer;
+            font-size: 1em;
+            color: #333;
+        }
+        
+        header .menu-item img {
+            width: 24px;
+            height: auto;
+        }
+        
+        /* 갤러리 스타일 */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .gallery .main-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        /* 내용 섹션 스타일 */
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .content .text h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .content .text p {
+            font-size: 1em;
+            color: #666;
+        }
+        
+        .content .request-button {
+            margin-top: 20px;
+        }
+        
+        .content .request-button .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5a5f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .content .request-button .btn:hover {
+            background-color: #e04e50;
+        }
+        
+        {% comment %}  {% endcomment %}
+        /* 지도 및 달력 섹션 스타일 */
+        .map-calendar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .map-calendar .map,
+        .map-calendar .calendar {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-calendar .map h2,
+        .map-calendar .calendar h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .map-calendar .calendar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .hr {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    {% comment %} header {% endcomment %}
+    <header class="header">
+        <div class="logo">
+            <a href="{% url 'sharecloth:main' %}">
+                <img src="static/img/sharecloth_logo.png" alt="CLOTHSHARE">
+            </a>
+        </div>
+        <div class="menu">
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:donation' %}'">Donation</div>
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:mypage' %}'">My page</div>
+            <div class="menu-item">
+                <img src="https://img.icons8.com/material-outlined/24/000000/menu.png" alt="Menu Icon">
+            </div>
+        </div>
+    </header>
+
+    {% comment %} index {% endcomment %}
+    <div class="container">
+        <!-- Main Image -->
+        <div class="gallery">
+            <div class="main-image">
+                <img src="{{ posts.image.url }}" alt="Main Image">
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <div class="text">
+                <h2>{{ posts.title }}</h2>
+                <p>{{ posts.content }}</p>
+            </div>
+            <div class="request-button">
+                <a href="{% url 'sharecloth:payment_page' posts.id %}">
+                    <button class="btn btn-primary">대여하기</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Map and Calendar Section -->
+        <div class="map-calendar">
+            <div class="map">
+                <h2>대여 가능 위치</h2>
+                <h6>{{ address }}</h6>
+                <div id="map"></div>
+            </div>
+            <div class="calendar">
+                <h3>대여 일자 선택</h3>
+                <input type="date" class="form-control">
+            </div>
+        </div>
+
+        <hr class="hr"/>
+    </div>
+
+  
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=us9nflqufv&submodules=geocoder"></script>
+      
+    <script>
+        /*
+        * 화면에 지도 생성
+        * 지도에 핀 찍기 : https://october-east-sea.tistory.com/167
+        * geocode 공식 문서 : https://navermaps.github.io/maps.js.ncp/docs/tutorial-Geocoder-Geocoding.html
+        */
+        var map;
+
+        // 네이버 지도 API를 이용하여 지도를 생성
+        function initMap() {
+            map = new naver.maps.Map('map', {
+                center: new naver.maps.LatLng(37.5666102, 126.9783881), // 초기 지도 중심 위치 (서울 시청)
+                zoom: 10 // 초기 줌 레벨
+            });
+        }
+    </script>
+
+    <script>
+        var address = "{{ address }}"; // 이 값으로 지도에 핀 찍음 / post의 address 값 이용
+        var map = new naver.maps.Map('map');
+
+        naver.maps.Service.geocode({
+            query: address
+        }, function(status, response) {
+            if (status !== naver.maps.Service.Status.OK) {
+                return alert(address + '의 검색 결과가 없거나 기타 네트워크 에러');
+            }
+
+            var result = response.v2, // 검색 결과의 컨테이너
+                items = result.addresses; // 검색 결과의 배열
+
+            // 첫 번째 검색 결과의 위도, 경도를 추출
+            var firstItem = items[0],
+                coords = new naver.maps.LatLng(firstItem.y, firstItem.x);
+
+            // 지도의 중심을 결과의 첫 좌표로 설정하고
+            map.setCenter(coords);
+
+            // 그 위치에 마커를 생성
+            var marker = new naver.maps.Marker({
+                position: coords,
+                map: map
+            });
+        });
+    </script>
+
+    <!-- 페이지 로드 시 initMap 함수 호출 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</body>
+</html>
+

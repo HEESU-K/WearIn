@@ -1,0 +1,49 @@
+Content-Type: multipart/alternative;
+ boundary="===============6976956518248747322=="
+MIME-Version: 1.0
+Subject: Profile activation
+From: sendEmail@test.com
+To: test5@test.com
+Date: Thu, 23 May 2024 03:48:34 -0000
+Message-ID: <171643611466.8264.12269308620414728959@DESKTOP-H95GR2I>
+
+--===============6976956518248747322==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+To activate your profile, please follow this link:
+
+http://localhost:8000/accounts/activate/QBXA0BNCe4nbVefPO7nN/
+
+--===============6976956518248747322==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Profile activation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<p>
+    To activate your profile, please follow this link:
+</p>
+
+<p>
+    <a href="http://localhost:8000/accounts/activate/QBXA0BNCe4nbVefPO7nN/">http://localhost:8000/accounts/activate/QBXA0BNCe4nbVefPO7nN/</a>
+</p>
+
+</body>
+
+</html>
+
+--===============6976956518248747322==--
+
+-------------------------------------------------------------------------------

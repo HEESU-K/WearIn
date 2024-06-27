@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block content %}
+{% comment %} 필터 적용 결과 페이지 {% endcomment %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>필터 적용 결과</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        a:link { color: white; text-decoration: none;}
+        a:visited { color: white; text-decoration: none;}
+        a:hover { color: white;}
+        
+        {% comment %} 헤더 디자인 {% endcomment %}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            text-align: center;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .wearin-title {
+            color: #ff5a5f;
+        }
+          .wearin-title:hover {
+            color: #BB2B30;
+        }
+
+        .header .logo img {
+            height: 40px;
+        }
+        .header .menu {
+            display: flex;
+            align-items: center;
+        }
+        .header .menu .menu-item {
+            margin-left: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ff5a5f;
+        }
+        .header .menu .menu-item:hover {
+            color: #BB2B30;
+        }
+
+        {% comment %} index {% endcomment %}
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4개의 열을 동일한 크기로 설정 */
+            grid-auto-rows: minmax(350px, auto); /* 모든 행의 최소 높이를 설정 */
+            gap: 20px; /* 포스트 사이의 간격 */
+            padding: 20px;
+           
+            max-width: 1200px; /* 컨테이너의 최대 너비 설정 */
+            margin: auto; /* 중앙 정렬 */
+            margin-left: 350px;
+        }
+          .item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            aspect-ratio: 1 / 1; /* 포스트의 크기를 정사각형으로 유지 */
+            
+        }
+        
+        .item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .item a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .image-container {
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+            position: relative;
+        }
+        
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .info h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .info p {
+            font-size: 1.2em;
+            color: #666;
+        }
+    </style>
+</hedad>
+
+<body>
+    {% comment %} header {% endcomment %}
+    <div class="header">
+        <div class="logo">
+            <a href="{% url 'sharecloth:main' %}">
+                <h2 class="wearin-title"> WearIn </h2>
+            </a> 
+        </div>
+        <div class="menu">
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:donation_page' %}'">Donation</div>
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:mypage' %}'">My page</div>
+        </div>
+    </div>
+
+    
+
+    {% comment %} index {% endcomment %}
+    <div class="container">
+        {% if posts %}
+            {% for post in posts %}
+            <div class="item">
+                <div class="image-container">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                </div>
+                <div class="info">
+                    <h2>{{ post.title }}</h2>
+                    <p>{{ post.price }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>검색 결과가 없습니다.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+{% endblock %}
+
+
+

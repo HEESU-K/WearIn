@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>대여 상품 등록</title>
+
+    <style>
+        a:link { color: white; text-decoration: none;}
+        a:visited { color: white; text-decoration: none;}
+        a:hover { color: white;}
+
+        {% comment %} 헤더 디자인 {% endcomment %}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            text-align: center;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .wearin-title {
+            color: #ff5a5f;
+        }
+        .wearin-title:hover {
+            color: #BB2B30;
+        }
+
+        .header .logo img {
+            height: 40px;
+        }
+        .header .menu {
+            display: flex;
+            align-items: center;
+        }
+        .header .menu .menu-item {
+            margin-left: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ff5a5f;
+        }
+        .header .menu .menu-item:hover {
+            color: #BB2B30;
+        }
+        
+        {% comment %} 메인 디자인 {% endcomment %}
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        form {
+            margin-top: 570px;
+            background-color: #fff;
+            padding: 40px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 1600px;
+            width: 2000px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-control:focus {
+            border-color: ##ff5a5f;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+            outline: none;
+        }
+
+        h1{
+            color: #ff5a5f;
+        }
+
+        .submit-btn{
+            background-color: #ff5a5f;
+        }
+        button[type=submit] {
+            background-color: ##ff5a5f;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button[type=submit]:hover {
+            background-color: #BB2B30;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        small {
+            display: block;
+            color: #888;
+            margin-top: 5px;
+        }
+        small.error {
+            color: red;
+            margin-top: 2px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    {% comment %} 헤더 {% endcomment %}
+    <div class="header">
+        <div class="logo">
+            <a href="{% url 'sharecloth:main' %}">
+                <h2 class="wearin-title"> WearIn </h2>
+            </a> 
+        </div>
+        <div class="menu">
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:donation_page' %}'">Donation</div>
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:mypage' %}'">My page</div>
+        </div>
+    </div>
+
+
+    <form method="post" enctype="multipart/form-data">
+        <h1>상품 등록</h1>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }} 
+                {{ field }}
+                {% if field.help_text %}
+                    <small>{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <small class="error">{{ error }}</small>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button class="submit-btn" type="submit">등록하기</button>
+    </form>
+</body>
+</html>
+{% endblock %}

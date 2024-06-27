@@ -1,0 +1,18 @@
+{% extends 'main/page.html' %}
+
+
+
+{% block content %}
+
+    <h4>Log out</h4>
+
+    <p>
+        Confirm this action:
+    </p>
+
+    <form action="{% url 'account_test:log_out' %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-success">Log out</button>
+    </form>
+
+{% endblock %}

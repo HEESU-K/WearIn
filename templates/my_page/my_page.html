@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% block content %}
+{% comment %} http://localhost:8000/mypage/ {% endcomment %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.username }}님의 MyPage</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .my-hr {
+            border: 0;
+            height: 2px;
+            background: #ccc;
+            margin-top: 20x;
+            margin-bottom: 20px;
+        }
+
+        a:link { color: white; text-decoration: none;}
+        a:visited { color: white; text-decoration: none;}
+        a:hover { color: white;}
+      
+        .mypage {
+            margin-left: 390px;
+        }
+        .nav-link {
+            cursor: pointer;
+        }
+        .tab-content {
+            margin-top: 20px;
+        }
+
+        {% comment %} 위치 검색 폼 디자인 {% endcomment %}
+        #locationForm {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        #locationSearch {
+            margin-right: 10px;
+            padding: 5px;
+            width: calc(100% - 110px);
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #ff5a5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #BB2B30;
+        }
+
+        {% comment %} 헤더 디자인 {% endcomment %}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            text-align: center;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 11px 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .wearin-title {
+            color: #ff5a5f;
+        }
+          .wearin-title:hover {
+            color: #BB2B30;
+        }
+
+        .header .logo img {
+            height: 40px;
+        }
+        .header .menu {
+            display: flex;
+            align-items: center;
+        }
+        .header .menu .menu-item {
+            margin-left: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #ff5a5f;
+        }
+        .header .menu .menu-item:hover {
+            color: #BB2B30;
+        }
+
+
+        {% comment %} 제품 등록 버튼 디자인 {% endcomment %}
+        .register-btn {
+            color: white;
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #ff5a5f;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .register-btn:hover {
+            background-color: #BB2B30;
+            color: white;
+        }
+
+        {% comment %} 대여 중인 상품 세부 리스트 {% endcomment %}
+        .rent-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+        .rent-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .rent-item h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .rent-item .dates {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .container h1 {
+            font-weight: bold;
+            color: #333;
+        }
+        .search_location {
+            margin-bottom: 20px;
+        }
+
+        {% comment %} 남은 날짜 위치 조절 {% endcomment %}
+        .rent-item .remaining-days {
+            position: absolute; /* 절대 위치 */
+            top: 10px; /* 위에서 10px */
+            right: 10px; /* 오른쪽에서 10px */
+            background-color: #414141; /* 배경색 */
+            color: white; /* 글자색 */
+            padding: 5px 10px; /* 패딩 */
+            border-radius: 4px; /* 테두리 반경 */
+            font-size: 0.9em; /* 글자 크기 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 */
+        }
+
+        .return-button {
+            display: inline-block;
+            background-color: #ff5a5f; /* 버튼 배경색 */
+            color: white; /* 버튼 글자색 */
+            padding: 10px 20px; /* 패딩 */
+            border: none; /* 테두리 제거 */
+            border-radius: 8px; /* 테두리 반경 */
+            font-size: 1em; /* 글자 크기 */
+            cursor: pointer; /* 커서 모양 변경 */
+            transition: background-color 0.2s, transform 0.2s; /* 배경색과 크기 변화에 대한 트랜지션 */
+            margin-top: 10px; /* 상단 여백 */
+        }
+        .return-button:hover {
+            background-color: #BB2B30; /* 호버 시 배경색 */
+            transform: scale(1.05); /* 호버 시 크기 변화 */
+        }
+    </style>
+</head>
+<body>
+  {% comment %} header {% endcomment %}
+    <div class="header">
+        <div class="logo">
+            <a href="{% url 'sharecloth:main' %}">
+                <h2 class="wearin-title"> WearIn </h2>
+            </a> 
+        </div>
+        <div class="menu">
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:donation_page' %}'">Donation</div>
+            <div class="menu-item" onclick="window.location.href='{% url 'sharecloth:mypage' %}'">My page</div>
+        </div>
+    </div>
+  
+
+  {% comment %} index {% endcomment %}
+  <div class="container mypage">
+    <h1>안녕하세요, {{ user.username }}님!</h1>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="container">
+          <a href="{% url 'sharecloth:post_create' %}" class="register-btn">제품 등록하기</a>         
+
+          <!-- 위치 검색 폼 -->
+          <div class="search_location">
+            <form id="locationForm" method="post" action="{% url 'sharecloth:update_address' %}">
+              {% csrf_token %}
+              <label for="locationSearch">위치 검색:</label>
+              <input type="text" id="locationSearch" name="location" placeholder="예시) 대구 남구 대명로 282-1">
+              <button type="submit">검색</button>
+            </form>
+          </div>
+          <strong> 등록된  {{ user.username }}님의 주소 : {{ user_address }} </strong>
+          <hr class="my-hr">
+          <div>
+            {% if rented_items %}
+              <ul>
+                  {% for item in rented_items %}
+                  <li class="rent-item">
+
+                    <h3>{{ item.post.title }}</h3>
+                    <p class="dates">대여일: {{ item.rent_date }}</p>
+                    <p class="dates">반납일: {{ item.return_date }}</p>
+                    
+                    <p class="remaining-days">남은 일자: D-{{ item.remaining_days }}</p>
+                    
+                    <form method="post" action="{% url 'sharecloth:return_item' item.id %}">
+                      {% csrf_token %}
+                      <button class="return-button" type="submit">반납</button>
+                    </form>
+
+                  </li>
+                  {% endfor %}
+              </ul>
+          {% else %}
+              <p>현재 대여 중인 상품이 없습니다.</p>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

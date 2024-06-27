@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Example</title>
+<style>
+    /* Style for the buttons */
+    .button {
+        border: 2px solid black;
+        padding: 10px 20px;
+        margin: 5px;
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .button:hover {
+        background-color: #333;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<!-- Buttons -->
+<button class="button" onclick="window.location.href='home.html'">Home</button>
+<button class="button" onclick="window.location.href='{% url 'sharecloth:donation' %}'">Donation</button>
+<button class="button" onclick="window.location.href='{% url 'sharecloth:mypage' %}'">My Page</button>
+<button class="button" onclick="window.location.href='{% url 'sharecloth:chat' %}'">Chat</button>
+<button class="button" onclick="window.location.href='{% url 'sharecloth:login_page' %}'">Login</button>
+<button class="button" onclick="window.location.href='{% url 'sharecloth:register_page' %}'">Register</button>
+<button class="button" onclick="window.location.href='product_detail.html'">Product Detail</button>
+
+</body>
+</html>
+{% endblock %}

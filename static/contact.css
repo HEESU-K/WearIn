@@ -1,0 +1,591 @@
+/*****  로그인 페이지 CSS 파일 1  *****/
+
+.wrapper-rectangle-1-inner {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(1.036);
+  }
+  .wrapper-rectangle-12 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 335px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login {
+    position: absolute;
+    top: 64.6px;
+    left: 0;
+    font-weight: 500;
+    display: inline-block;
+    width: 129px;
+    height: 76.3px;
+  }
+  .meubel-house-logos-05-icon4 {
+    position: absolute;
+    top: 0;
+    left: 27px;
+    width: 77px;
+    height: 81.6px;
+    object-fit: cover;
+  }
+  .login-parent {
+    position: absolute;
+    top: 64.7px;
+    left: 655px;
+    width: 129px;
+    height: 141px;
+  }
+  .wrapper-rectangle-1-container {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 1440px;
+    height: 335px;
+    font-size: var(--font-size-29xl);
+  }
+  .group-child23 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-white1);
+    width: 1440px;
+    height: 735px;
+  }
+  .div31 {
+    top: 153px;
+    left: 234px;
+    width: 941px;
+    height: 19.3px;
+  }
+  .div31,
+  .div32,
+  .login1 {
+    position: absolute;
+    display: inline-block;
+  }
+  .login1 {
+    top: 47px;
+    left: 641px;
+    font-size: 36px;
+    font-weight: 600;
+    text-align: left;
+    width: 98px;
+    height: 34.7px;
+  }
+  .div32 {
+    top: 119px;
+    left: 668px;
+    width: 57px;
+    height: 19.3px;
+  }
+  .rectangle-parent7 {
+    position: absolute;
+    top: 430px;
+    left: -4px;
+    width: 1440px;
+    height: 735px;
+    text-align: center;
+    font-size: var(--font-size-xl);
+  }
+  .footer-inner {
+    position: absolute;
+    height: 100.1%;
+    width: 100%;
+    top: -0.1%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-white1);
+    border-top: 1px solid var(--color-gray-200);
+    box-sizing: border-box;
+  }
+  .fl-33134-usa2,
+  .university-drive-suite2 {
+    margin: 0;
+  }
+  .university-drive-suite-container2 {
+    position: absolute;
+    width: 25.15%;
+    top: 27.56%;
+    left: 0.18%;
+    color: var(--color-darkgray-100);
+    display: inline-block;
+  }
+  .funiro2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: var(--font-size-5xl);
+  }
+  .about4,
+  .contact5,
+  .home7,
+  .shop8 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+  }
+  .about4,
+  .contact5,
+  .shop8 {
+    top: 30.04%;
+  }
+  .about4,
+  .contact5 {
+    top: 60.09%;
+  }
+  .contact5 {
+    top: 89.7%;
+  }
+  .home-parent4 {
+    position: absolute;
+    height: 74.68%;
+    width: 97.06%;
+    top: 25.32%;
+    right: 0;
+    bottom: 0;
+    left: 2.94%;
+  }
+  .group-parent17,
+  .links2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .links2 {
+    font-weight: 500;
+    color: var(--color-darkgray-100);
+  }
+  .group-parent17 {
+    height: 100%;
+    width: 19.32%;
+    right: 80.68%;
+    bottom: 0;
+  }
+  .help2,
+  .payment-options2,
+  .privacy-policies2,
+  .returns2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+  }
+  .privacy-policies2,
+  .returns2 {
+    top: 42.94%;
+  }
+  .privacy-policies2 {
+    top: 85.28%;
+  }
+  .help-container,
+  .payment-options-container {
+    position: absolute;
+    height: 67.36%;
+    width: 100%;
+    top: 32.64%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: var(--color-black);
+  }
+  .help-container {
+    height: 77.56%;
+    width: 39.77%;
+    top: 0;
+    bottom: 22.44%;
+    left: 60.23%;
+    color: var(--color-darkgray-100);
+  }
+  .group-parent16 {
+    position: absolute;
+    height: 100%;
+    width: 49.58%;
+    top: 0;
+    right: 50.42%;
+    bottom: 0;
+    left: 0;
+  }
+  .newsletter2 {
+    font-weight: 500;
+  }
+  .enter-your-email2,
+  .group-child24,
+  .newsletter2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .group-child24 {
+    height: 8.33%;
+    width: 70.63%;
+    top: 100%;
+    right: 29.37%;
+    bottom: -8.33%;
+    border-top: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .group-child25,
+  .subscribe2 {
+    position: absolute;
+    left: 73.78%;
+  }
+  .subscribe2 {
+    top: 0;
+    font-weight: 500;
+    color: var(--color-black);
+  }
+  .group-child25 {
+    height: 8.33%;
+    width: 26.92%;
+    top: 100%;
+    right: -0.7%;
+    bottom: -8.33%;
+    border-top: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .enter-your-email-address-container {
+    position: absolute;
+    height: 23.76%;
+    width: 100%;
+    top: 76.24%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: var(--font-size-sm);
+  }
+  .newsletter-container {
+    position: absolute;
+    height: 32.37%;
+    width: 40.28%;
+    top: 0.64%;
+    right: 0;
+    bottom: 66.99%;
+    left: 59.72%;
+    color: var(--color-darkgray-100);
+  }
+  .group-parent15 {
+    position: absolute;
+    height: 100%;
+    width: 62.67%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 37.33%;
+  }
+  .group-child26,
+  .university-drive-suite-200-cor-container {
+    position: absolute;
+    height: 74.46%;
+    width: 91.37%;
+    top: 0;
+    right: 8.63%;
+    bottom: 25.54%;
+    left: 0;
+  }
+  .group-child26 {
+    height: 1.69%;
+    width: 100.08%;
+    right: -0.08%;
+    bottom: 98.31%;
+    border-top: 1px solid var(--color-gainsboro);
+    box-sizing: border-box;
+  }
+  .furino-all-rights2 {
+    position: absolute;
+    top: 59.32%;
+    left: 0.16%;
+  }
+  .group-parent14,
+  .line-container {
+    position: absolute;
+    height: 14.08%;
+    width: 100%;
+    top: 85.92%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .group-parent14 {
+    height: 82.97%;
+    width: 86.11%;
+    top: 9.5%;
+    right: 6.94%;
+    bottom: 7.52%;
+    left: 6.94%;
+  }
+  .div33,
+  .div34,
+  .footer2 {
+    position: absolute;
+    top: 1170px;
+    left: 0;
+    width: 1440px;
+    height: 505px;
+  }
+  .div33,
+  .div34 {
+    top: 304.5px;
+    left: 332px;
+    font-size: var(--font-size-xl);
+    text-align: center;
+    display: inline-block;
+    width: 74px;
+    height: 19.3px;
+  }
+  .div34 {
+    left: 37px;
+    width: 192px;
+  }
+  .group-child27 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    box-sizing: border-box;
+    width: 237px;
+    height: 53.4px;
+  }
+  .div35 {
+    position: absolute;
+    top: 14px;
+    left: 97px;
+    display: inline-block;
+    width: 59.2px;
+    height: 26.7px;
+  }
+  .rectangle-parent8 {
+    position: absolute;
+    top: 367.5px;
+    left: 132px;
+    width: 237px;
+    height: 53.4px;
+    cursor: pointer;
+  }
+  .div36 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+    display: inline-block;
+    width: 111.3px;
+    height: 23.3px;
+  }
+  .group-child28 {
+    position: absolute;
+    top: 44.7px;
+    left: 1.3px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white1);
+    border: 1px solid var(--color-darkgray-100);
+    box-sizing: border-box;
+    width: 528.8px;
+    height: 72.8px;
+  }
+  .div37 {
+    position: absolute;
+    top: 69.5px;
+    left: 31px;
+    color: var(--color-darkgray-100);
+    display: inline-block;
+    width: 55px;
+    height: 24px;
+  }
+  .div38,
+  .group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 530px;
+    height: 117.5px;
+  }
+  .div38 {
+    font-weight: 500;
+    display: inline-block;
+    width: 143.8px;
+    height: 23.3px;
+  }
+  .group-child29 {
+    position: absolute;
+    top: 44.7px;
+    left: 1.3px;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white1);
+    border: 1px solid var(--color-darkgray-100);
+    box-sizing: border-box;
+    width: 528.8px;
+    height: 72.8px;
+  }
+  .div39 {
+    position: absolute;
+    top: 69.9px;
+    left: 31px;
+    color: var(--color-darkgray-100);
+    display: inline-block;
+    width: 114px;
+    height: 23.3px;
+  }
+  .container,
+  .header-inner,
+  .parent {
+    position: absolute;
+    top: 152.4px;
+    left: 0;
+    width: 530px;
+    height: 117.5px;
+  }
+  .header-inner,
+  .parent {
+    top: 652px;
+    left: 427px;
+    height: 420.9px;
+  }
+  .header-inner {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-white1);
+  }
+  .about5,
+  .contact6,
+  .home8,
+  .shop9 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+  }
+  .about5,
+  .contact6,
+  .shop9 {
+    left: 33.79%;
+  }
+  .about5,
+  .contact6 {
+    left: 65.93%;
+  }
+  .contact6 {
+    left: 100%;
+  }
+  .home-parent5 {
+    position: absolute;
+    height: 58.54%;
+    width: 28.76%;
+    top: 21.95%;
+    right: 37.22%;
+    bottom: 19.51%;
+    left: 34.02%;
+  }
+  .chat-icon1 {
+    position: absolute;
+    top: 7px;
+    left: 1237.5px;
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+  }
+  .akar-iconsheart2,
+  .akar-iconssearch3,
+  .ant-designshopping-cart-outli-icon2,
+  .mdiaccount-alert-outline-icon2 {
+    position: absolute;
+    height: 68.29%;
+    width: 2.21%;
+    top: 17.07%;
+    right: 17.31%;
+    bottom: 14.63%;
+    left: 80.48%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .akar-iconsheart2,
+  .akar-iconssearch3,
+  .ant-designshopping-cart-outli-icon2 {
+    right: 11.54%;
+    left: 86.25%;
+  }
+  .akar-iconsheart2,
+  .ant-designshopping-cart-outli-icon2 {
+    right: 5.77%;
+    left: 92.02%;
+  }
+  .ant-designshopping-cart-outli-icon2 {
+    right: 0;
+    left: 97.79%;
+  }
+  .meubel-house-logos-05-icon5 {
+    width: 50px;
+    position: relative;
+    height: 32px;
+    object-fit: cover;
+  }
+  .skinclinic3 {
+    position: relative;
+  }
+  .meubel-house-logos-05-container {
+    position: absolute;
+    height: 100%;
+    width: 11.38%;
+    top: 0;
+    right: 88.62%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-8xs);
+  }
+  .chat-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1265.5px;
+    height: 41px;
+    font-size: var(--font-size-15xl);
+    font-family: var(--font-montserrat);
+  }
+  .group-parent18 {
+    position: absolute;
+    height: 41%;
+    width: 87.88%;
+    top: 29%;
+    right: 6.94%;
+    bottom: 30%;
+    left: 5.17%;
+  }
+  .header2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1440px;
+    height: 100px;
+  }
+  .contact4 {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white1);
+    height: 2365px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    font-family: var(--font-poppins);
+  }
+  

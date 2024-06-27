@@ -1,0 +1,198 @@
+.header-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-white1);
+}
+.div,
+.help,
+.home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+}
+.div,
+.help {
+  left: 44.4%;
+}
+.help {
+  left: 86.64%;
+}
+.home-parent {
+  position: absolute;
+  height: 58.54%;
+  width: 21.89%;
+  top: 21.95%;
+  right: 44.09%;
+  bottom: 19.51%;
+  left: 34.02%;
+}
+.chat-icon {
+  position: absolute;
+  top: 7px;
+  left: 1237.5px;
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+}
+.akar-iconsheart,
+.akar-iconssearch,
+.ant-designshopping-cart-outli-icon,
+.mdiaccount-alert-outline-icon {
+  position: absolute;
+  height: 68.29%;
+  width: 2.21%;
+  top: 17.07%;
+  right: 17.31%;
+  bottom: 14.63%;
+  left: 80.48%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.akar-iconsheart,
+.akar-iconssearch,
+.ant-designshopping-cart-outli-icon {
+  right: 11.54%;
+  left: 86.25%;
+}
+.akar-iconsheart,
+.ant-designshopping-cart-outli-icon {
+  right: 5.77%;
+  left: 92.02%;
+}
+.ant-designshopping-cart-outli-icon {
+  right: 0;
+  left: 97.79%;
+  cursor: pointer;
+}
+.meubel-house-logos-05-icon {
+  width: 50px;
+  position: relative;
+  height: 32px;
+  object-fit: cover;
+}
+.skinclinic {
+  position: relative;
+}
+.meubel-house-logos-05-parent {
+  position: absolute;
+  height: 100%;
+  width: 11.38%;
+  top: 0;
+  right: 88.62%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8xs);
+}
+.chat-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1265.5px;
+  height: 41px;
+  font-size: var(--font-size-15xl);
+  font-family: var(--font-montserrat);
+}
+.group-parent {
+  position: absolute;
+  height: 41%;
+  width: 87.88%;
+  top: 29%;
+  right: 6.94%;
+  bottom: 30%;
+  left: 5.17%;
+}
+.header1 {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 1440px;
+  height: 100px;
+}
+.wrapper-rectangle-1-child {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.038);
+}
+.shop,
+.wrapper-rectangle-1,
+.wrapper-rectangle-1-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wrapper-rectangle-1 {
+  width: 1440px;
+  height: 316px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop {
+  font-weight: 500;
+}
+.shop-wrapper {
+  position: absolute;
+  top: 121px;
+  left: 658px;
+  width: 124px;
+  height: 72px;
+}
+.home1,
+.shop1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+}
+.shop1 {
+  left: 76px;
+  font-weight: 300;
+}
+.dashiconsarrow-down-alt2 {
+  position: absolute;
+  top: 2px;
+  left: 50px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  object-fit: contain;
+}
+.home-group {
+  position: absolute;
+  top: 195px;
+  left: 664px;
+  width: 117px;
+  height: 24px;
+  font-size: var(--font-size-base);
+}
+.wrapper-rectangle-1-parent {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 1440px;
+  height: 316px;
+  font-size: var(--font-size-29xl);
+}
+.header {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white1);
+  height: 446px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
