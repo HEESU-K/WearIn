@@ -1,0 +1,8 @@
+WearIn : 의류(Wear)와 안(In)의 결합으로, 
+내면의 스타일을 표현하고 나누는 브랜드의 느낌을 전달합니다.
+
+
+account list
+사용자 이름 admin1 / 이름 HS / 성 K / 이메일 test@test.com / 비밀번호 test1234@
+admin2 / HS / KK / test1@test.com / passwd132@
+admin3  / HS /KKK / test2@test.com / passwd132@
