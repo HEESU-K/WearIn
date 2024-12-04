@@ -110,21 +110,6 @@ CHANNEL_LAYERS = {
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
-
-'''
-# 메인 DB 연결 코드
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER' : 'users',
-        'PASSWORD' : '3mintsout!',
-        'HOST' : '132.226.16.219',
-        'PORT' : '3306',
-    }
-}
-'''
-
 # 계정 시스템 테스트 용 DB 연결 코드 
 DATABASES = {
     'default': {
